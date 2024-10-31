@@ -1,3 +1,4 @@
+import { Invoice } from './../../invoice/entities/invoice.entity';
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import mongoose from "mongoose";
 
@@ -11,8 +12,8 @@ export class User{
   password: string;
   @Prop([{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Posts'
+    ref: 'Invoice'
   }])
-  posts: mongoose.Schema.Types.ObjectId[]
+  Invoice: mongoose.Schema.Types.ObjectId[]
 }
 export const UserSchema = SchemaFactory.createForClass(User)
